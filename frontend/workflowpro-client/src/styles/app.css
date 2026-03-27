@@ -1,0 +1,361 @@
+:root {
+  --wf-bg: #f5f7fb;
+  --wf-surface: #ffffff;
+  --wf-text: #111827;
+  --wf-muted: #6b7280;
+  --wf-border: #e5e7eb;
+  --wf-primary: #111827;
+  --wf-soft: #f9fafb;
+  --wf-soft-2: #eef2f7;
+  --wf-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+  --wf-shadow-hover: 0 16px 36px rgba(17, 24, 39, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--wf-bg);
+  color: var(--wf-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wf-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.9),
+      transparent 35%
+    ),
+    linear-gradient(180deg, #f7f9fc 0%, #f3f6fb 100%);
+}
+
+/* Navbar */
+.wf-navbar {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--wf-border);
+}
+
+.wf-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #111827, #374151);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.14);
+}
+
+.wf-navbar-subtitle {
+  font-size: 12px;
+  color: var(--wf-muted);
+  margin-top: -2px;
+}
+
+.wf-user-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wf-user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Shared cards */
+.wf-card {
+  background-color: var(--wf-surface);
+  border: 1px solid var(--wf-border);
+  border-radius: 18px;
+  box-shadow: var(--wf-shadow);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.wf-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--wf-shadow-hover);
+}
+
+.wf-title {
+  font-weight: 700;
+  color: var(--wf-text);
+  letter-spacing: -0.02em;
+}
+
+.wf-subtitle {
+  color: var(--wf-muted);
+  max-width: 760px;
+}
+
+.wf-kicker {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+  font-weight: 700;
+}
+
+.wf-hero {
+  padding: 8px 2px 4px 2px;
+}
+
+/* Stats */
+.wf-stat-card {
+  background: #fff;
+  border: 1px solid var(--wf-border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.05);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.wf-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--wf-shadow-hover);
+}
+
+.wf-stat-label {
+  color: var(--wf-muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.wf-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--wf-text);
+  line-height: 1;
+}
+
+/* Chips */
+.wf-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.wf-chip-light {
+  background: #eef2f7;
+  color: #374151;
+}
+
+/* Board */
+.wf-board-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap: 16px;
+  overflow-x: auto;
+  align-items: start;
+}
+
+.wf-kanban-column {
+  min-height: 360px;
+  background-color: var(--wf-soft);
+  border: 1px solid var(--wf-border);
+  border-radius: 16px;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.wf-kanban-column:hover {
+  border-color: #d5dbe5;
+}
+
+.wf-column-count {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+}
+
+/* Task cards */
+.wf-task-card {
+  background-color: #ffffff;
+  border: 1px solid var(--wf-border);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.04);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+  cursor: grab;
+}
+
+.wf-task-card:hover {
+  transform: translateY(-2px);
+  border-color: #d5dbe5;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
+}
+
+.wf-task-card:active {
+  cursor: grabbing;
+}
+
+.wf-priority-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #374151;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.wf-empty-state {
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 18px 12px;
+  text-align: center;
+  color: var(--wf-muted);
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Auth */
+.wf-auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.wf-auth-card {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Form polish */
+.form-control,
+.form-select {
+  border-radius: 12px;
+  border-color: #dbe1ea;
+  min-height: 44px;
+  transition:
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 0.2rem rgba(17, 24, 39, 0.08);
+}
+
+.form-control::placeholder,
+.form-select::placeholder {
+  color: #9ca3af;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.btn {
+  border-radius: 12px;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-dark {
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.14);
+}
+
+.btn-outline-secondary {
+  border-color: #d1d5db;
+}
+
+/* Small helpers */
+.wf-muted {
+  color: var(--wf-muted);
+}
+
+.wf-divider {
+  height: 1px;
+  background: var(--wf-border);
+  margin: 12px 0;
+}
+
+/* Scroll polish */
+.wf-board-grid::-webkit-scrollbar {
+  height: 10px;
+}
+
+.wf-board-grid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.wf-board-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+  .wf-board-grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .wf-board-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-title {
+    font-size: 32px;
+  }
+
+  .wf-stat-value {
+    font-size: 28px;
+  }
+}
