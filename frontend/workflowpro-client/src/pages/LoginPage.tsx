@@ -94,6 +94,11 @@ export default function LoginPage() {
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
+          <div className="alert alert-light border mt-3 mb-0">
+            <div className="fw-semibold mb-1">Demo account</div>
+            <div>Email: hasan@example.com</div>
+            <div>Password: 123456</div>
+          </div>
         </form>
       </div>
     </div>
